@@ -20,7 +20,7 @@ Options are to be set within requirejs config under babelbox.
 ```javascript
 	{ 
 		babelbox: {
-			"babelboxpath": "babelbox",
+			"babelboxpath": "info",
 			"localeseperator": "-",
 			"folders": false,
 			"fileseperator": "_"
@@ -31,7 +31,7 @@ Options are to be set within requirejs config under babelbox.
 #### babelboxpath
 	The modulename babelbox is defined as.
 	Type: string
-	Default: 'babelbox'
+	Default: 'i18n'
 
 #### localeseperator
 	The seperator between the primary and secondary locals.

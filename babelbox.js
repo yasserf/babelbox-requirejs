@@ -33,7 +33,7 @@
 	define( {
 		load: function( name, req, onload, config ) {
 			var babelboxconfig = config.babelbox ? config.babelbox : {};
-			var babelboxpath = babelboxconfig.babelboxpath ? babelboxconfig.babelboxpath : 'babelbox';
+			var babelboxpath = babelboxconfig.babelboxpath ? babelboxconfig.babelboxpath : 'i18n';
 			var localeseperator = babelboxconfig.localeseperator ? babelboxconfig.localeseperator : '-';
 
 			req( [ babelboxpath ], function( babelbox ) {
