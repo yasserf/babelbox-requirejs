@@ -33,6 +33,12 @@
 	//Main module definition.
 	define( {
 		load: function( name, req, onload, config ) {
+			// Do not bother with the work if a build
+			if( config && config.isBuild ) {
+				onload();
+				return;
+			}
+
 			/**
 			 * Only load an i18n once
 			 */
