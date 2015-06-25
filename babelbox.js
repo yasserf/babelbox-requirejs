@@ -29,18 +29,29 @@
 		return 'text!' + normalisedName + '.json';
 	}
 
+	var loadedPaths = [];
 	//Main module definition.
 	define( {
 		load: function( name, req, onload, config ) {
-			var babelboxconfig = config.babelbox ? config.babelbox : {};
-			var babelboxpath = babelboxconfig.babelboxpath ? babelboxconfig.babelboxpath : 'i18n';
-			var localeseperator = babelboxconfig.localeseperator ? babelboxconfig.localeseperator : '-';
+			/**
+			 * Only load an i18n once
+			 */
+			if( loadedPaths.indexOf( name ) > -1 ) {
+				onload();
+				return;
+			}
+			loadedPaths.push( name );
+
+			var babelboxconfig = config.babelbox || {};
+			var babelboxpath = babelboxconfig.babelboxpath || 'i18n';
+			var localeseperator = babelboxconfig.localeseperator || '-';
+			var localedepth = typeof babelboxconfig.localedepth !== 'undefined' ? babelboxconfig.localedepth : 1;
 
 			req( [ babelboxpath ], function( babelbox ) {
 				var locale = babelbox.getLocale();
 				var requires = [];
 
-				for( var i = 1; i <= locale.length; i++ ) {
+				for( var i = 1; i <= locale.length && i < localedepth + 1; i++ ) {
 					requires.push( normalise( name, locale.slice( 0, i ).join( localeseperator ), babelboxconfig ) );
 				}
 
