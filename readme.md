@@ -1,4 +1,4 @@
-# requirejs babelbox 
+# requirejs babelbox [![Bower version](https://badge.fury.io/bo/babelbox-requirejs.svg)](https://badge.fury.io/bo/babelbox-requirejs)
 
 An AMD loader plugin for babelbox that allows tokens to be loaded
 directly into babelbox
