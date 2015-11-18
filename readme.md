@@ -3,8 +3,6 @@
 An AMD loader plugin for babelbox that allows tokens to be loaded
 directly into babelbox
 
-Currently only tested in latest version of chrome!
-
 ## Docs
 
 You can install this plugin via bower [babelbox](https://github.com/yasserf/babelbox)
